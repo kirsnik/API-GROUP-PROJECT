@@ -12,23 +12,35 @@
     <title></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <ulnk rel="stylesheet" href="">
+ <link rel="stylesheet" type="text/css" href="css/index.css">
+ <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <!-- Including the Lobster font from Google's Font Directory -->
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lobster" />
 </head>
 
 <body>
     <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
+        
+  <img class="banner" src="css/Images/MovieMoxiebanner2.png" alt="Banner Image"/>
+          
 
     <div class="container">
 
-        <div class="navbar">
-            <ul>
-                <li id="logo">logo</li>
-                <li id="search" type="text"><input type="text" placeholder="Search Movies Here"> <input type="button"
-                        value="send"></li>
+        <nav>
+            <ul class="navBar">
+          <!-- first style>
+                <img class="logo" src="/Users/Tr-Nguyen/Desktop/API-GROUP-PROJECT/css/Images/Small MovieMoxie.png">
+        <!-->
+
+            <li><a href="#">Home</a></li>  
+            <li><a href="#">New Movies</a></li>  
+            <li><a href="#">About Us</a></li>  
+            <li style="float:right" id="search" type="text"><input type="text" placeholder="Search Movies Here"> <input type="button"
+            value="send"></li>
             </ul>
-        </div>
+        </nav>
 
         <div id="posterNavBar">
             <ul>
@@ -48,17 +60,104 @@
 
     </div>
 
-    <div id="footer">
-        <div class="container">
+   <footer>
+        <div id= "contactUs" class="container">
             <form action="mailto:someone@example.com" method="post" enctype="text/plain">
                 <input type="text" name="mail" action="contact" placeholder="Contact us">
                 <input type="button" value="send">
             </form>
         </div>
-    </div>
-
+    </footer>
 
     <script src="javascript/app.js" async defer></script>
 </body>
 
 </html>
+<style>
+
+
+    body {
+        background-image: url("css/Images/red-velvet-curtain1.jpg");
+        background-repeat: no-repeat;
+        font-family: 'Lora', serif;
+        color: yellow;
+    }
+
+
+*{
+    margin:0;
+    padding: 0;
+}
+
+
+.banner {
+    width:100%; 
+
+
+}
+    
+
+.navBar {
+         width: 100%; 
+         height: 70px;
+         background: linear-gradient(to bottom left, #800000 20%, #000000 80%);
+         display:block;
+         margin: auto;
+         list-style-type: none;
+
+     }
+
+     li {
+         float: left;
+         border-right:1px solid#3a0c0c; 
+     }
+
+     li :last-child {
+        border-right: none;
+        margin-right: 10px;
+     }
+
+     ul a:hover:not(.active) {
+        color: #FFF;
+    }
+    .active {
+        color:rgb(71, 6, 6);
+    }
+     ul a {
+        background-repeat: no-repeat;
+        background-position: right;
+        padding-right: 50px;
+        padding-left: 50px;
+        display: block;
+        line-height: 70px;
+        text-decoration: none;
+        font-family:fantasy;
+        font-size: 21px;
+        color: #fce205;
+}
+
+footer {
+        width: 100%; 
+        height: 30px;
+        background: linear-gradient(to bottom left, #800000 20%, #000000 80%);
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        text-align: center;
+
+}
+
+.contactUs {
+    margin-top:40px;
+}
+/*
+     .logo {
+         vertical-align: top;
+         margin-right: 100px;
+         margin-top: 15px;
+         margin-left: 20px;
+         float:left; 
+     }
+*/
+
+    </style>
