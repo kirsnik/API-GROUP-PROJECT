@@ -12,8 +12,13 @@
     <title></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <ulnk rel="stylesheet" href="">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+ <link rel="stylesheet" type="text/css" href="css/style.css">
+ <link rel="stylesheet" type="text/css" href="css/reset.css">
+ <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <!-- Including the Lobster font from Google's Font Directory -->
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lobster" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 </head>
 
@@ -23,15 +28,26 @@
     <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
+        
+  <img class="banner" src="css/Images/MovieMoxiebanner2.png" alt="Banner Image"/>
+          
 
     <div class="container">
 
-        <div class="navbar">
-            <ul>
-                <li id="logo">logo</li>
-                <li  type="text"><form><input id="search" type="text" placeholder="Search Movies Here"> <input type="button" id="sendbutton" value="send"></form></li>
+
+        <nav>
+            <ul class="navBar">
+          <!-- first style>
+                <img class="logo" src="/Users/Tr-Nguyen/Desktop/API-GROUP-PROJECT/css/Images/Small MovieMoxie.png">
+        <!-->
+
+            <li><a href="#">Home</a></li>  
+            <li><a href="#">New Movies</a></li>  
+            <li><a href="#">About Us</a></li>  
+            <li style="float:right" type="text"><form><input id="search" type="text" placeholder="Search Movies Here"> <input type="button"
+            value="send"></form></li>
             </ul>
-        </div>
+        </nav>
 
         <div id="posterNavBar">
             <ul>
@@ -51,15 +67,14 @@
 
     </div>
 
-    <div id="footer">
-        <div class="container">
+   <footer>
+        <div id= "contactUs" class="container">
             <form action="mailto:someone@example.com" method="post" enctype="text/plain">
                 <input type="text" name="mail" action="contact" placeholder="Contact us">
                 <input type="button" value="send">
             </form>
         </div>
-    </div>
-
+    </footer>
 
     <script src="javascript/apis.js" async defer></script>
 </body>
