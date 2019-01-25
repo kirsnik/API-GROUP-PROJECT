@@ -1,0 +1,84 @@
+body {
+    background-image: url("/Users/Tr-Nguyen/Desktop/API-GROUP-PROJECT/css/Images/red-velvet-curtain1.jpg");
+    background-repeat: no-repeat;
+    font-family: 'Lora', serif;
+    color: yellow;
+}
+
+
+*{
+margin:0;
+padding: 0;
+}
+
+
+.banner {
+width:100%; 
+
+
+}
+
+
+.navBar {
+     width: 100%; 
+     height: 70px;
+     background: linear-gradient(to bottom left, #800000 20%, #000000 80%);
+     display:block;
+     margin: auto;
+     list-style-type: none;
+
+ }
+
+ li {
+     float: left;
+     border-right:1px solid#3a0c0c; 
+ }
+
+ li :last-child {
+    border-right: none;
+    margin-right: 10px;
+ }
+
+ ul a:hover:not(.active) {
+    color: #FFF;
+}
+.active {
+    color:rgb(71, 6, 6);
+}
+ ul a {
+    background-repeat: no-repeat;
+    background-position: right;
+    padding-right: 50px;
+    padding-left: 50px;
+    display: block;
+    line-height: 70px;
+    text-decoration: none;
+    font-family:fantasy;
+    font-size: 21px;
+    color: #fce205;
+}
+
+footer {
+    width: 100%; 
+    height: 30px;
+    background: linear-gradient(to bottom left, #800000 20%, #000000 80%);
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    text-align: center;
+
+}
+
+.contactUs {
+margin-top:40px;
+}
+/*
+ .logo {
+     vertical-align: top;
+     margin-right: 100px;
+     margin-top: 15px;
+     margin-left: 20px;
+     float:left; 
+ }
+*/
+
