@@ -1,25 +1,24 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!-->
+
 <html class="no-js">
-<!--<![endif]-->
 
 <head>
     <meta charset="utf-8">
+    <title>Welcome To MovieMoxie</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title></title>
-    <meta name="description" content="">
+   <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
- <link rel="stylesheet" type="text/css" href="css/style.css">
- <link rel="stylesheet" type="text/css" href="css/reset.css">
- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <!-- Including the Lobster font from Google's Font Directory -->
-  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lobster" />
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="shortcut icon" href="css/Images/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!-- Including the Lobster font from Google's Font Directory -->
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lobster" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
+    <!-- Firebase Reference -->
+    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
 </head>
 
 
@@ -34,10 +33,9 @@
 
     <div class="container">
 
-
         <nav>
-            <form>
-                <ul class="navBar">
+            <form method="post">
+              <ul class="navBar">
             <!-- first style>
                     <img class="logo" src="/Users/Tr-Nguyen/Desktop/API-GROUP-PROJECT/css/Images/Small MovieMoxie.png">
             <!-->
@@ -48,12 +46,17 @@
                         
                         <input id="search" type="text" placeholder="Search Movies Here">
                         <input type="submit" id="sendbutton" value="send">
+                    <li><a href="signup.html">Sign Up</a></li>  
+                    <li><a href="#">About Us</a></li>  
+                    <li style="float:right" type="text">
+                        
                         
                     </li>
                 </ul>
             </form>
         </nav>
-
+ <!--Navbar Ends Here-->
+      
         <div id="posterNavBar">
             <ul>
                 <li id="genre">Genre</li>
