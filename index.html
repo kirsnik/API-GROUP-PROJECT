@@ -17,13 +17,8 @@
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lobster" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-    <!-- Bootstrap CDN-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-
     <!-- Firebase Reference -->
     <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
-
 </head>
 
 
@@ -38,26 +33,27 @@
 
     <div class="container">
 
-<!-- Navbar begin-->
-
         <nav>
             <form method="post">
-                <ul class="navBar">
+              <ul class="navBar">
             <!-- first style>
                     <img class="logo" src="/Users/Tr-Nguyen/Desktop/API-GROUP-PROJECT/css/Images/Small MovieMoxie.png">
             <!-->
                     <li><a href="#">Home</a></li>  
+                    <li><a href="#">New Movies</a></li>  
+                    <li><a href="#">About Us</a></li>  
+                    <li style="float:right" type="text">
+                        
+                        <input id="search" type="text" placeholder="Search Movies Here">
+                        <input type="submit" id="sendbutton" value="send">
                     <li><a href="signup.html">Sign Up</a></li>  
                     <li><a href="#">About Us</a></li>  
                     <li style="float:right" type="text">
                         
-                         <input type="text" class="textbox" placeholder="Search">
-                    <input title="Search" value="" type="submit" class="button">
                         
                     </li>
                 </ul>
             </form>
-          
         </nav>
  <!--Navbar Ends Here-->
       
@@ -69,7 +65,7 @@
             </ul>
         </div>
 
-        <div class="imgCorral">Image Posters here</div>
+        <div id="imgCorral">Image Posters here</div>
 
     </div>
 
