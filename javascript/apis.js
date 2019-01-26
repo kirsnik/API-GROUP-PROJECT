@@ -1,95 +1,91 @@
-  var queryUrl = "https://maps.googleapis.com/maps/api/js?key=AIzaSyBK8DHqD3RUDa1tWQH0hd4h87dN6d6JmK0&libraries=places"
+$(document).ready(function () {
 
-  var map;
-  var infowindow;
+  moviesInTheater();
 
-  function initMap() {
-    var pyrmont = {lat: -33.867, lng: 151.195};
-
-    map = new google.maps.Map(document.getElementById('map'), {
-      center: pyrmont,
-      zoom: 15
+  function moviesInTheater(){
+    var whatAsking = "filmsNowShowing/?n=10"
+    var queryURL = "https://api-gate2.movieglu.com/" + whatAsking
+    var userPosition
+    navigator.geolocation.getCurrentPosition(function (position) {
+      userPosition = position.coords.latitude.toFixed(3) + "; " + position.coords.longitude.toFixed(3)
+      console.log(position.coords.latitude)
+      console.log(position.coords.longitude)
+      console.log(userPosition)
+      movieCall(userPosition)
     });
-
-    infowindow = new google.maps.InfoWindow();
-    var service = new google.maps.places.PlacesService(map);
-    service.nearbySearch({
-      location: pyrmont,
-      radius: 500,
-      type: ['store']
-    }, callback);
-  }
-
-  function callback(results, status) {
-    if (status === google.maps.places.PlacesServiceStatus.OK) {
-      for (var i = 0; i < results.length; i++) {
-        createMarker(results[i]);
-      }
+  
+    function movieCall(userPosition) {
+      $.ajax({
+        url: queryURL,
+        method: "GET",
+        dataType: "json",
+        headers: {
+          'api-version': "v200",
+          'Username': 'UCSD_1',
+          'Authorization': 'Basic VUNTRF8xOkl3eXFFbE9TY2FVOA==',
+          'x-api-key': 'CFatqM0arm903zygeYWVn8lHTpNiDGdu5vLFHcAN',
+          'device-datetime': "2018-11-27T13:26:30.147Z",
+          'geolocation': "" + userPosition + "",
+          'territory': "US",
+          'client': "BUSI"
+        }
+      }).then(function (response) {
+        console.log("Under response func", response);
+        var poster = response.films;
+        for (var i = 0; i < poster.length; i++) {
+  
+          var posterUrl = poster[i].images.poster[1].medium.film_image;
+          var imgDiv = $("<div>");
+          var img = $("<img>");
+          img.attr("src", posterUrl);
+          $(imgDiv).append(img);
+          $("#imgCorral").append(imgDiv);
+        }
+      });
+    }
+  } 
+  
+  function moviesComingSoon(){
+    var whatAsking = "filmsComingSoon/?n=10"
+    var queryURL = "https://api-gate2.movieglu.com/" + whatAsking
+    var userPosition
+    navigator.geolocation.getCurrentPosition(function (position) {
+      userPosition = position.coords.latitude.toFixed(3) + "; " + position.coords.longitude.toFixed(3)
+      console.log(position.coords.latitude)
+      console.log(position.coords.longitude)
+      console.log(userPosition)
+      movieCall(userPosition)
+    });
+  
+    function movieCall(userPosition) {
+      $.ajax({
+        url: queryURL,
+        method: "GET",
+        dataType: "json",
+        headers: {
+          'api-version': "v200",
+          'Username': 'UCSD_1',
+          'Authorization': 'Basic VUNTRF8xOkl3eXFFbE9TY2FVOA==',
+          'x-api-key': 'CFatqM0arm903zygeYWVn8lHTpNiDGdu5vLFHcAN',
+          'device-datetime': "2018-11-27T13:26:30.147Z",
+          'geolocation': "" + userPosition + "",
+          'territory': "US",
+          'client': "BUSI"
+        }
+      }).then(function (response) {
+        console.log("Under response func", response);
+        var poster = response.films;
+        for (var i = 0; i < poster.length; i++) {
+  
+          var posterUrl = poster[i].images.poster[1].medium.film_image;
+          var imgDiv = $("<div>");
+          var img = $("<img>");
+          img.attr("src", posterUrl);
+          $(imgDiv).append(img);
+          $("#imgCorral").append(imgDiv);
+        }
+      });
     }
   }
 
-  function createMarker(place) {
-    var placeLoc = place.geometry.location;
-    var marker = new google.maps.Marker({
-      map: map,
-      position: place.geometry.location
-    });
-
-    google.maps.event.addListener(marker, 'click', function() {
-      infowindow.setContent(place.name);
-      infowindow.open(map, this);
-    });
-  }
-/* </script>
-</head>
-<body>
-<div id="map"></div>
-<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places&callback=initMap" async defer></script>
-</body>
-</html>*/
-
-/* START OMDB Database API*/
-
-//set an on-click event for the send button 
-//set an on-click for enter button in search
-
-$("#sendbutton").on("click", function(event) {
-  event.preventDefault();
-var selected = $("#search").val();
-
-//var selected = "Cinderella"
-
-var queryURL = "https://www.omdbapi.com/?t=" + selected + "&y=&plot=short&apikey=trilogy"
-  
-// Perfoming an AJAX GET request to our queryURL
-$.ajax({
-  url: queryURL,
-  method: "GET"
-})
-
-.then(function(response) {
-  console.log (response);
-    var searchResults = response.Actors;
-    var moviePoster = response.Poster;
-    var genre = response.Genre;
-    var ratings = response.Rated;
-
-      console.log(searchResults);
-      console.log (moviePoster);
-
-
-var posterTag = $("<img>");
-
-// Giving the image tag an src attribute of a proprty pulled off the
-// result item
-posterTag.attr("src", moviePoster);
-
-// Appending the paragraph and personImage we created to the "gifDiv" div we created
-$(".imgCorral").html(posterTag);
-//$(".imgCorral").append(moviePoster);
-
-$("#genre").text (genre);
-$("#ratings").text (ratings);
-})
-
-})
+});
