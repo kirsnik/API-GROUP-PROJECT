@@ -4,19 +4,38 @@
 
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title></title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-<!--
- <link rel="stylesheet" type="text/css" href="css/style.css">
- <link rel="stylesheet" type="text/css" href="css/reset.css"> -->
- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <meta charset="utf-8">
+  <title>Sign Up With Us</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="css/Images/favicon.ico">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet"type="text/css" href="css/signupstyle.css" media="all">
+  <link rel="stylesheet" type="text/css" href="css/reset.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.3/css/bulma.min.css">
+
+  <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+  
+  <link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
+  <!-- Including signup.js file: CURRENTLY NOT WORKING!!
+  <script type="text/javascript" src="javascript/signup.js"></script> -->
+
   <!-- Including the Lobster font from Google's Font Directory -->
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lobster" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!-- Bootstrap CDN-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
+  
+  <!-- Firebase Reference -->
+  <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+  <!-- Firebase Auth -->
+  <script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
 </head>
 
 
@@ -28,77 +47,108 @@
 
     <div class="container">
 
+<!-- Navbar begin-->
 
-        <nav>
-            <form>
-                <ul class="navBar">
-            <!-- first style>
-                    <img class="logo" src="/Users/Tr-Nguyen/Desktop/API-GROUP-PROJECT/css/Images/Small MovieMoxie.png">
-            <!-->
-                    <li><a href="index.html">Home</a></li>  
-                    <li><a href="#">Sign Up</a></li>  
-                    <li><a href="#">About Us</a></li>  
-                    <li style="float:right" type="text">
-                        
-                        <input id="search" type="text" placeholder="Search Movies Here">
-                        <input type="submit" id="sendbutton" value="send">
-                        
-                    </li>
-                </ul>
-            </form>
-        </nav>
+<nav>
+     
+        <ul class="navBar">
+    <!-- first style>
+            <img class="logo" src="/Users/Tr-Nguyen/Desktop/API-GROUP-PROJECT/css/Images/Small MovieMoxie.png">
+    <!-->
+            <li><a href="index.html">Home</a></li>  
+            <li><a href="signup.html">Sign Up</a></li>  
+            <li><a href="aboutus.html">About Us</a></li>  
+            <li style="float:right; margin: 5px" type="text">
+        <form method="post">    
+        <input type="text" class="textbox" placeholder="Search">
+        <input title="Search" value="" type="submit" class="button">
+        </form>
+            </li>
+        </ul>
+   
+  
+</nav>
+<!--Navbar Ends Here-->
 
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-            <div class="card card-default">
-                <div class="card-header text-white bg-secondary"><b>
-                Your Info
-                </b></div> <br>
-                <div class="card-body">
-                <form>
-                    <div class="form-group row">
-                        <label for="employee-name"><b>First Name</b></label>
-                        <input class="form-control" id="employee-name-input" type="text" required>
-                    </div>
-                    <div class="form-group row">
-                        <label for="employee-role"><b>Last Name</b></label>
-                        <input class="form-control" id="role-input" type="text" required>
-                    </div>
-                    <div class="form-group row">
-                        <label for="start-date"><b>Login Name</b></label>
-                        <input class="form-control" id="start-input" type="text" required>
-                    </div>
-                    <div class="form-group row">
-                        <label for="monthly-rate"><b>Password</b></label>
-                        <input class="form-control" id="rate-input" type="text" required>
-                    </div>
-                    <div class="form-group row">
-                        <label for="monthly-rate"><b>Email</b></label>
-                        <input class="form-control" id="rate-input" type="email" required>
-                    </div>
-                    <div class="form-group row">
-                        <label for="monthly-rate"><b>Birthdate</b></label>
-                        <input class="form-control" id="rate-input" type="date" required>
-                    </div>
-                    <div class="form-group row">
-                        <label for="monthly-rate"><b>Zip Code</b></label>
-                        <input class="form-control" id="rate-input" type="number" required>
-                    </div>
-                    <button class="btn btn-primary" id="add-employee-button" type="submit">Submit</button>
-                </form>
-                </div>
+<body>
+    <!-- main -->
+    <div class="main-w3layouts wrapper">
+      <h1>SignUp Form</h1>
+      <div class="main-agileinfo">
+        <div class="agileits-top">
+          <form action="#" method="post">
+            <input class="text" id="username-input" type="text" name="Username" placeholder="Username" required="">
+            <input class="text email" id="email-input" type="email" name="email" placeholder="Email" required="">
+            <input class="text" id="password-input" type="password" name="password" placeholder="Password" required="">
+            <input class="text w3lpass" id="confirmPassword-input" type="password" name="password" placeholder="Confirm Password" required="">
+            <div class="wthree-text">
+              <label class="anim">
+                <input type="checkbox" class="checkbox" required="">
+                <span>I Agree To The Terms & Conditions</span>
+              </label>
+              <div class="clear"> </div>
             </div>
-            </div>
+            <input id="signup-button" type="submit" value="SIGNUP">
+          </form>
+          <p>Have An Account? <a href="#"> Login Now!</a></p>
         </div>
+      </div>
+  
+
+      </ul>
     </div>
 
-    </div>
-
+    <footer>
+      <div id= "contactUs" class="container">
+          <form action="mailto:someone@example.com" method="post" enctype="text/plain">
+              <input type="text" name="mail" action="contact" placeholder="Contact us">
+              <input type="button" value="send">
+          </form>
+      </div>
+    </footer>
     
 
 
-    <script src="javascript/apis.js" async defer></script>
+<script>
+
+// Initialize Firebase
+var config = {
+  apiKey: "AIzaSyBluw0_IVPONNeI-eGflP0rHbPyafLk7_M",
+  authDomain: "classproject-c158a.firebaseapp.com",
+  databaseURL: "https://classproject-c158a.firebaseio.com",
+  projectId: "classproject-c158a",
+  storageBucket: "classproject-c158a.appspot.com",
+  messagingSenderId: "525268441532"
+};
+firebase.initializeApp(config);
+
+// Created variable to reference the database
+var database = firebase.database();
+
+// Capture signup button click
+$("#signup-button").on("click", function(){
+    // Prevents page refresh
+    event.preventDefault();
+
+    // Create object with properties set to input field values
+    var userInfo = {
+    username: $("#username-input").val().trim(),
+    email: $("#email-input").val().trim(),
+    password: $("#password-input").val().trim(),
+    confirmPassword: $("#confirmPassword-input").val().trim(),
+    }
+    console.log(userInfo);
+
+    // Pushes userInfo to database
+    database.ref().push(userInfo)
+});
+
+
+</script>
+
+
+  
+
 </body>
 
 </html>
