@@ -1,5 +1,6 @@
 body {
     background-image: url("./Images/red-velvet-curtain1.jpg");
+    background-size: 100%;
     background-repeat: no-repeat;
     font-family: 'Lora', serif;
     color: yellow;
