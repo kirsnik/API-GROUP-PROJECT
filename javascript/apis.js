@@ -1,43 +1,65 @@
-  var queryUrl = "https://maps.googleapis.com/maps/api/js?key=AIzaSyBK8DHqD3RUDa1tWQH0hd4h87dN6d6JmK0&libraries=places"
+$(document).ready(function () {
 
-  var map;
-  var infowindow;
+  //current movies API
 
-  function initMap() {
-    var pyrmont = {lat: -33.867, lng: 151.195};
+  moviesInTheater();
 
-    map = new google.maps.Map(document.getElementById('map'), {
-      center: pyrmont,
-      zoom: 15
+  function moviesInTheater(){
+    var whatAsking = "filmsNowShowing/?n=10"
+    var queryURL = "https://api-gate2.movieglu.com/" + whatAsking
+    var userPosition
+    navigator.geolocation.getCurrentPosition(function (position) {
+      userPosition = position.coords.latitude.toFixed(3) + "; " + position.coords.longitude.toFixed(3)
+      console.log(position.coords.latitude)
+      console.log(position.coords.longitude)
+      console.log(userPosition)
+      movieCall(userPosition)
     });
+  
+  //getting user position to collect current movies
 
-    infowindow = new google.maps.InfoWindow();
-    var service = new google.maps.places.PlacesService(map);
-    service.nearbySearch({
-      location: pyrmont,
-      radius: 500,
-      type: ['store']
-    }, callback);
-  }
-
-  function callback(results, status) {
-    if (status === google.maps.places.PlacesServiceStatus.OK) {
-      for (var i = 0; i < results.length; i++) {
-        createMarker(results[i]);
-      }
+    function movieCall(userPosition) {
+      $.ajax({
+        url: queryURL,
+        method: "GET",
+        dataType: "json",
+        headers: {
+          'api-version': "v200",
+          'Username': 'UCSD_1',
+          'Authorization': 'Basic VUNTRF8xOkl3eXFFbE9TY2FVOA==',
+          'x-api-key': 'CFatqM0arm903zygeYWVn8lHTpNiDGdu5vLFHcAN',
+          'device-datetime': "2018-11-27T13:26:30.147Z",
+          'geolocation': "" + userPosition + "",
+          'territory': "US",
+          'client': "BUSI"
+        }
+      }).then(function (response) {
+        console.log("Under response func", response);
+        var poster = response.films;
+        for (var i = 0; i < poster.length; i++) {
+  
+          var posterUrl = poster[i].images.poster[1].medium.film_image;
+          var imgDiv = $("<div>");
+          var img = $("<img>");
+          img.attr("src", posterUrl);
+          $(imgDiv).append(img);
+          $("#imgCorral").append(imgDiv);
+        }
+      });
     }
-  }
-
-  function createMarker(place) {
-    var placeLoc = place.geometry.location;
-    var marker = new google.maps.Marker({
-      map: map,
-      position: place.geometry.location
-    });
-
-    google.maps.event.addListener(marker, 'click', function() {
-      infowindow.setContent(place.name);
-      infowindow.open(map, this);
+  } 
+  
+  //movies coming soon api
+  function moviesComingSoon(){
+    var whatAsking = "filmsComingSoon/?n=10"
+    var queryURL = "https://api-gate2.movieglu.com/" + whatAsking
+    var userPosition
+    navigator.geolocation.getCurrentPosition(function (position) {
+      userPosition = position.coords.latitude.toFixed(3) + "; " + position.coords.longitude.toFixed(3)
+      console.log(position.coords.latitude)
+      console.log(position.coords.longitude)
+      console.log(userPosition)
+      movieCall(userPosition)
     });
   }
 /* </script>
@@ -92,4 +114,47 @@ $("#genre").text (genre);
 $("#ratings").text (ratings);
 })
 
-})
+  function showTimes () {
+    var whatAsking = "cinemaShowTimes/?film_id=12345&cinema_id=54321&date=2018-04-12&sort=popularity";
+    var queryURL = "https://api-gate2.movieglu.com/" + whatAsking
+    var userPosition
+    navigator.geolocation.getCurrentPosition(function (position) {
+      userPosition = position.coords.latitude.toFixed(3) + "; " + position.coords.longitude.toFixed(3)
+      movieCall(userPosition)
+      
+    });
+    function movieCall(userPosition){
+        $.ajax({
+          url: queryURL,
+          method: "GET",
+          dataType: "json",
+          headers: {
+            'api-version': "v200",
+            'Username': 'UCSD_1',
+            'Authorization': 'Basic VUNTRF8xOkl3eXFFbE9TY2FVOA==',
+            'x-api-key': 'CFatqM0arm903zygeYWVn8lHTpNiDGdu5vLFHcAN',
+            'device-datetime': "2018-11-27T13:26:30.147Z",
+            'geolocation': "" + userPosition + "",
+            'territory': "US",
+            'client': "BUSI"
+            }
+          })
+        }
+      };
+
+
+
+});
+
+/*var candy = ["dippin-dots.png", "buttered-popcorn.png", "sno-caps.png", "red-vines.png", "junior-mints.png", "sour-patch-kids.png"];
+for (i=0; i<candy.length; i++) {
+
+    var img = $("<img>");
+    var divImger = $("<div>")
+    var snackImage = img.attr ("src", candy[i]);
+    console.log (snackImage);
+
+
+    //$(divImger).append(snackImage);
+    //$("#datesTimes").append(snackImage);
+}*/
