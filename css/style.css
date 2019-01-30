@@ -2,6 +2,7 @@ body {
     background-image: url("./Images/red-velvet-curtain1.jpg");
     background-size: 100%;
     background-repeat: no-repeat;
+    background-attachment: fixed;
     font-family: 'Lora', serif;
     color: yellow;
 }
@@ -126,6 +127,9 @@ html {
   form > .button:hover {
     background-color: rgba(253, 236, 0, 0.8);
   }
+
+
+
 /*footer*/
 
 footer {
