@@ -4,32 +4,38 @@
 
 
 <head>
-    <meta charset="utf-8">
-    <title>Sign Up With Us</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="css/Images/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="stylesheet"type="text/css" href="css/signupstyle.css" media="all">
-    <link rel="stylesheet" type="text/css" href="css/reset.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.3/css/bulma.min.css">
+  <meta charset="utf-8">
+  <title>Sign Up With Us</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="css/Images/favicon.ico">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet"type="text/css" href="css/signupstyle.css" media="all">
+  <link rel="stylesheet" type="text/css" href="css/reset.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.3/css/bulma.min.css">
 
-    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-    
+  <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+  
   <link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
+  <!-- Including signup.js file: CURRENTLY NOT WORKING!!
+  <script type="text/javascript" src="javascript/signup.js"></script> -->
+
   <!-- Including the Lobster font from Google's Font Directory -->
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lobster" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
- <!-- Bootstrap CDN-->
- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <!-- Bootstrap CDN-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
- 
- <!-- Firebase Reference -->
- <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+  
+  <!-- Firebase Reference -->
+  <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+  <!-- Firebase Auth -->
+  <script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
 </head>
 
 
@@ -70,10 +76,10 @@
       <div class="main-agileinfo">
         <div class="agileits-top">
           <form action="#" method="post">
-            <input class="text" type="text" name="Username" placeholder="Username" required="">
-            <input class="text email" type="email" name="email" placeholder="Email" required="">
-            <input class="text" type="password" name="password" placeholder="Password" required="">
-            <input class="text w3lpass" type="password" name="password" placeholder="Confirm Password" required="">
+            <input class="text" id="username-input" type="text" name="Username" placeholder="Username" required="">
+            <input class="text email" id="email-input" type="email" name="email" placeholder="Email" required="">
+            <input class="text" id="password-input" type="password" name="password" placeholder="Password" required="">
+            <input class="text w3lpass" id="confirmPassword-input" type="password" name="password" placeholder="Confirm Password" required="">
             <div class="wthree-text">
               <label class="anim">
                 <input type="checkbox" class="checkbox" required="">
@@ -81,7 +87,9 @@
               </label>
               <div class="clear"> </div>
             </div>
-            <input type="submit" value="SIGN UP">
+
+            <input id="signup-button" type="submit" value="SIGN UP">
+
           </form>
           <p>Have An Account? <a href="signin.html"> <br>Login Now!</a></p>
         </div>
@@ -92,14 +100,52 @@
     </div>
 
     <footer>
-            <div id= "contactUs" class="container">
-                <form action="mailto:someone@example.com" method="post" enctype="text/plain">
-                    <input type="text" name="mail" action="contact" placeholder="Contact us">
-                    <input type="button" value="send">
-                </form>
-            </div>
-        </footer>
+      <div id= "contactUs" class="container">
+          <form action="mailto:someone@example.com" method="post" enctype="text/plain">
+              <input type="text" name="mail" action="contact" placeholder="Contact us">
+              <input type="button" value="send">
+          </form>
+      </div>
+    </footer>
     
+
+
+<script>
+
+// Initialize Firebase
+var config = {
+  apiKey: "AIzaSyBluw0_IVPONNeI-eGflP0rHbPyafLk7_M",
+  authDomain: "classproject-c158a.firebaseapp.com",
+  databaseURL: "https://classproject-c158a.firebaseio.com",
+  projectId: "classproject-c158a",
+  storageBucket: "classproject-c158a.appspot.com",
+  messagingSenderId: "525268441532"
+};
+firebase.initializeApp(config);
+
+// Created variable to reference the database
+var database = firebase.database();
+
+// Capture signup button click
+$("#signup-button").on("click", function(){
+    // Prevents page refresh
+    event.preventDefault();
+
+    // Create object with properties set to input field values
+    var userInfo = {
+    username: $("#username-input").val().trim(),
+    email: $("#email-input").val().trim(),
+    password: $("#password-input").val().trim(),
+    confirmPassword: $("#confirmPassword-input").val().trim(),
+    }
+    console.log(userInfo);
+
+    // Pushes userInfo to database
+    database.ref().push(userInfo)
+});
+
+
+</script>
 
 
   
