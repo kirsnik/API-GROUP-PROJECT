@@ -1,10 +1,7 @@
 $(document).ready(function () {
 
-<<<<<<< HEAD
   //current movies API
 
-=======
->>>>>>> e9807cada6b799a49327fa973c0c8bd1a8cbf4a6
   moviesInTheater();
 
   function moviesInTheater(){
@@ -19,11 +16,8 @@ $(document).ready(function () {
       movieCall(userPosition)
     });
   
-<<<<<<< HEAD
   //getting user position to collect current movies
 
-=======
->>>>>>> e9807cada6b799a49327fa973c0c8bd1a8cbf4a6
     function movieCall(userPosition) {
       $.ajax({
         url: queryURL,
