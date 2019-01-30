@@ -93,6 +93,8 @@ $(document).ready(function () {
     }
   }
 
+  showTimes ();
+
   function showTimes () {
     var whatAsking = "cinemaShowTimes/?film_id=12345&cinema_id=54321&date=2018-04-12&sort=popularity";
     var queryURL = "https://api-gate2.movieglu.com/" + whatAsking
@@ -117,11 +119,44 @@ $(document).ready(function () {
             'territory': "US",
             'client': "BUSI"
             }
-          })
+          }).then(function (response) {
+            console.log("Under trailer func", response.film_trailer);
+            })
         }
       };
 
+trailers ();
 
+function trailers () {
+  var whatAsking = "trailers/?film_id=12345";
+  var queryURL ="https://api-gate2.movieglu.com/" + whatAsking
+  console.log (queryURL);
+  var userPosition
+  navigator.geolocation.getCurrentPosition(function (position) {
+    userPosition = position.coords.latitude.toFixed(3) + "; " + position.coords.longitude.toFixed(3)
+    movieCall(userPosition)
+  });
+  function movieCall(userPosition){
+    $.ajax({
+      url: queryURL,
+      method: "GET",
+      dataType: "json",
+      headers: {
+        'api-version': "v200",
+        'Username': 'UCSD_1',
+        'Authorization': 'Basic VUNTRF8xOkl3eXFFbE9TY2FVOA==',
+        'x-api-key': 'CFatqM0arm903zygeYWVn8lHTpNiDGdu5vLFHcAN',
+        'device-datetime': "2018-11-27T13:26:30.147Z",
+        'geolocation': "" + userPosition + "",
+        'territory': "US",
+        'client': "BUSI"
+        }
+          }).then(function (response) {
+          console.log("Under trailer func", response.film_trailer);
+          })
+    };
+
+}
 
 });
 
