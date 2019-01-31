@@ -2,8 +2,10 @@ body {
     background-image: url("./Images/red-velvet-curtain1.jpg");
     background-size: 100%;
     background-repeat: no-repeat;
-    background-attachment: fixed;
     font-family: 'Lora', serif;
+    background-attachment: fixed;
+    font-size:12px;
+    line-height: 17px;
     color: yellow;
 }
 
@@ -24,6 +26,7 @@ width:100%;
 html {
     height: 100%;
   }
+
   nav {
     max-width: 100%;
     mask-image: linear-gradient(
@@ -127,9 +130,6 @@ html {
   form > .button:hover {
     background-color: rgba(253, 236, 0, 0.8);
   }
-
-
-
 /*footer*/
 
 footer {
@@ -148,3 +148,251 @@ margin-top:40px;
 }
 
 
+
+.mytext {
+	line-height: 22px;
+	font-weight: normal;
+	color: #ffffff;
+	width: 200px;
+}
+
+.one_column{
+  padding: 30px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+
+
+.left_column{
+	float: left;
+	width: 230px;
+  padding-left: 30px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+
+
+.right_column{
+	float: right;
+	width: 260px;
+  padding-right: 30px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.left_column p, {
+	padding-top: 10px;
+}
+
+.left_column h2, .right_column h2{
+  padding-bottom: 20px;
+  margin-left: 20px;
+  margin-top: 5px;
+}
+
+.right_column fieldset {
+  border:6px;
+  padding-top: 5px;
+  margin-left: 10px;
+}
+
+.right_column input {
+    margin-bottom: 5px;
+}
+
+#submit, #reset{
+    width: 65px;
+    height: 20px;
+	line-height: 20px;
+    border: 5px;
+    background-color: #3d0909;
+    font-size: 12px;
+    font-weight: normal;
+    color: #ecdd0a;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+#text1, #text2, #text3{
+    width: 239px;
+    height: 24px;
+    padding-top: 0px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: none;
+    background-color:  #3d0909 ;
+    background-repeat:no-repeat;
+    background-position:left top;
+    color: white;
+    font-size: 12px;
+	line-height: 24px;
+    padding-bottom: 5px;
+}
+
+#text_mess {
+    width: 239px;
+    height: 55px;
+    padding-top: 4px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    border: none;
+    background-color:  #3d0909 ;
+    background-repeat:no-repeat;
+    background-position:left top;
+    color: white;
+    font-size: 12px;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+/*footer*/
+#footer_top{
+	background-color: rgba(255, 255, 255, 0.1);
+	width: 900px;
+	height: 285px;
+}
+
+#footer_top p{
+	color: #ffffff;
+}
+
+#footer_pad{
+	padding: 40px 50px 30px 60px;
+}
+
+.foot_col1, .foot_col2, .foot_col3,{
+    float: left ;
+    
+    box-sizing: border-box;
+}
+
+
+.foot_col1 h2, .foot_col2 h2, .foot_col3 h2{
+	padding-left: 20px;
+}
+
+
+
+.foot_col2{
+ 
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+
+
+.foot_col3 a{
+	font-weight: normal;
+}
+
+
+.link1{
+    background: url(./images/link1.png) no-repeat 0px 2px;
+    padding-left: 30px;
+    min-height: 18px;
+    padding-bottom: 10px;
+}
+
+.link2{
+    background: url(./images/link2.png) no-repeat 0px 2px;
+    padding-left: 30px;
+    min-height: 18px;
+    padding-bottom: 10px;
+}
+
+.link3{
+    background: url(./Images/link3.png) no-repeat 0px 2px;
+    padding-left: 30px;
+    min-height: 18px;
+    padding-bottom: 10px;
+}
+
+.link4{
+    background: url(./images/link4.png) no-repeat 0px 2px;
+    padding-left: 30px;
+    min-height: 18px;
+    padding-bottom: 10px;
+}
+
+#footer{
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	font-size: 10px;
+}
+
+/*calendar*/
+
+#calendar table {
+    width: 230px;
+    text-align: center;
+    color: #ffffff;
+	font-size: 9px;
+}
+
+#calendar h2{
+	text-align: center;
+}
+
+#calendar tbody td {
+    border: none;
+    width: 34px;
+	color: #ffffff;
+}
+
+#calendar caption, #calendar thead th{
+	color: #ffffff;
+	font-weight: normal;
+}
+
+#calendar #prev {
+    text-align: left;
+}
+
+#calendar #next {
+    text-align: right;
+}
+
+#calendar a {
+    text-decoration: none;
+    font-weight: normal;
+    color: #ffffff;
+}
+
+#calendar #now {
+    background: #ffffff;
+    border: 1px solid #d17b02;
+    color: #000000;
+}
+
+
+a{
+  color: #ffffff;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #d17b02;
+}
+
+
+
+h2{
+font-size: 18px;
+font-weight: normal;
+color: #d17b02;
+padding-bottom: 5px;
+}
+
+.clear{
+clear: both;	
+}
+
+#wrap{
+width: 900px;
+border-left: 1px solid #d17b02;
+border-right: 1px solid #d17b02;
+margin: 0 auto;
+}
