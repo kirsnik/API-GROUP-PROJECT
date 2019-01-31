@@ -1,5 +1,3 @@
-src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"
-
 // Initialize Firebase
 var config = {
   apiKey: "AIzaSyBluw0_IVPONNeI-eGflP0rHbPyafLk7_M",
@@ -14,20 +12,20 @@ firebase.initializeApp(config);
 // Created variable to reference the database
 var database = firebase.database();
 
-// Captuyre submit click to add employee
-$("#signup-button").on("click", function(){
-    // Prevents page refresh
-    event.preventDefault();
+// Capture submit click to add user info
+$("#signup-button").on("click", function () {
+  // Prevents page refresh
+  event.preventDefault();
 
-    // Create object with properties set to input field values
-    var userInfo = {
+  // Create object with properties set to input field values
+  var userInfo = {
     username: $("#username-input").val().trim(),
     email: $("#email-input").val().trim(),
     password: $("#password-input").val().trim(),
     confirmPassword: $("#confirmPassword-input").val().trim(),
-    }
-    console.log(userInfo);
+  }
+  console.log(userInfo);
 
-    // Pushes userInfo to database
-    database.ref().push(userInfo)
+  // Pushes userInfo to database
+  database.ref().push(userInfo)
 });

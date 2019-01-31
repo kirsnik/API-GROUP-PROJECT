@@ -7,21 +7,17 @@
   <meta charset="utf-8">
   <title>Sign Up With Us</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  
+
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="shortcut icon" href="css/Images/favicon.ico">
   <link rel="stylesheet" type="text/css" href="css/style.css">
-  <link rel="stylesheet"type="text/css" href="css/signupstyle.css" media="all">
+  <link rel="stylesheet" type="text/css" href="css/signupstyle.css" media="all">
   <link rel="stylesheet" type="text/css" href="css/reset.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.3/css/bulma.min.css">
 
   <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-  
-  <link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
-  <!-- Including signup.js file: CURRENTLY NOT WORKING!!
-  <script type="text/javascript" src="javascript/signup.js"></script> -->
 
   <!-- Including the Lobster font from Google's Font Directory -->
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lobster" />
@@ -30,126 +26,86 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
-  
   <!-- Firebase Reference -->
   <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
-  <!-- Firebase Auth -->
-  <script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
-  <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
+
+
+
 </head>
 
 
 
 <body>
-        
-  <img class="banner" src="css/Images/MovieMoxiebanner2.png" alt="Banner Image"/>
-          
 
-    <div class="container">
+  <img class="banner" src="css/Images/MovieMoxiebanner2.png" alt="Banner Image" />
 
-<!-- Navbar begin-->
 
-<nav>
-     
-        <ul class="navBar">
-   
-            <li><a href="index.html">Home</a></li>  
-            <li><a href="#">Coming Soon</a></li>
-            <li><a href="signin.html">Sign In</a></li>  
-            <li><a href="aboutus.html">About Us</a></li>  
-            <li style="float:right; margin: 5px" type="text">
-        <form method="post">    
-        <input type="text" class="textbox" placeholder="Search">
-        <input title="Search" value="" type="submit" class="button">
-        </form>
-            </li>
-        </ul>
-   
-  
-</nav>
-<!--Navbar Ends Here-->
+  <div class="container">
 
-<body>
-    <!-- main -->
-    <div class="main-w3layouts wrapper">
-      <h1>Sign Up Form</h1>
-      <div class="main-agileinfo">
-        <div class="agileits-top">
-          <form action="#" method="post">
-            <input class="text" id="username-input" type="text" name="Username" placeholder="Username" required="">
-            <input class="text email" id="email-input" type="email" name="email" placeholder="Email" required="">
-            <input class="text" id="password-input" type="password" name="password" placeholder="Password" required="">
-            <input class="text w3lpass" id="confirmPassword-input" type="password" name="password" placeholder="Confirm Password" required="">
-            <div class="wthree-text">
-              <label class="anim">
-                <input type="checkbox" class="checkbox" required="">
-                <span>I Agree To The Terms & Conditions</span>
-              </label>
-              <div class="clear"> </div>
-            </div>
+    <!-- Navbar begin-->
 
-            <input id="signup-button" type="submit" value="SIGN UP">
+    <nav>
 
+      <ul class="navBar">
+
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#">Coming Soon</a></li>
+        <li><a href="signin.html">Sign In</a></li>
+        <li><a href="aboutus.html">About Us</a></li>
+        <li style="float:right; margin: 5px" type="text">
+          <form method="post">
+            <input type="text" class="textbox" placeholder="Search">
+            <input title="Search" value="" type="submit" class="button">
           </form>
-          <p>Have An Account? <a href="signin.html"> <br>Login Now!</a></p>
-        </div>
-      </div>
-  
-
+        </li>
       </ul>
-    </div>
 
-    <footer>
-      <div id= "contactUs" class="container">
-          <form action="mailto:someone@example.com" method="post" enctype="text/plain">
-              <input type="text" name="mail" action="contact" placeholder="Contact us">
-              <input type="button" value="send">
-          </form>
+
+    </nav>
+    <!--Navbar Ends Here-->
+
+    <body>
+      <!-- main -->
+      <div class="main-w3layouts wrapper">
+        <h1>Sign Up Form</h1>
+        <div class="main-agileinfo">
+          <div class="agileits-top">
+            <form action="#" method="post">
+              <input class="text" id="username-input" type="text" name="Username" placeholder="Username" required="">
+              <input class="text email" id="email-input" type="email" name="email" placeholder="Email" required="">
+              <input class="text" id="password-input" type="password" name="password" placeholder="Password" required="">
+              <input class="text w3lpass" id="confirmPassword-input" type="password" name="password" placeholder="Confirm Password"
+                required="">
+              <div class="wthree-text">
+                <label class="anim">
+                  <input type="checkbox" class="checkbox" required="">
+                  <span>I Agree To The Terms & Conditions</span>
+                </label>
+                <div class="clear"> </div>
+              </div>
+
+              <input id="signup-button" type="submit" value="SIGN UP">
+
+            </form>
+            <p>Have An Account? <a href="signin.html"> <br>Login Now!</a></p>
+          </div>
+        </div>
+
+
+        </ul>
       </div>
-    </footer>
-    
 
+      <footer>
+        <div id="contactUs" class="container">
+          <form action="mailto:someone@example.com" method="post" enctype="text/plain">
+            <input type="text" name="mail" action="contact" placeholder="Contact us">
+            <input type="button" value="send">
+          </form>
+        </div>
+      </footer>
 
-<script>
-
-// Initialize Firebase
-var config = {
-  apiKey: "AIzaSyBluw0_IVPONNeI-eGflP0rHbPyafLk7_M",
-  authDomain: "classproject-c158a.firebaseapp.com",
-  databaseURL: "https://classproject-c158a.firebaseio.com",
-  projectId: "classproject-c158a",
-  storageBucket: "classproject-c158a.appspot.com",
-  messagingSenderId: "525268441532"
-};
-firebase.initializeApp(config);
-
-// Created variable to reference the database
-var database = firebase.database();
-
-// Capture signup button click
-$("#signup-button").on("click", function(){
-    // Prevents page refresh
-    event.preventDefault();
-
-    // Create object with properties set to input field values
-    var userInfo = {
-    username: $("#username-input").val().trim(),
-    email: $("#email-input").val().trim(),
-    password: $("#password-input").val().trim(),
-    confirmPassword: $("#confirmPassword-input").val().trim(),
-    }
-    console.log(userInfo);
-
-    // Pushes userInfo to database
-    database.ref().push(userInfo)
-});
-
-
-</script>
-
-
-  
-
-</body>
+      <!-- Including signup.js -->
+      <script type="text/javascript" src="javascript/signup.js"></script>
+    </body>
 
 </html>
