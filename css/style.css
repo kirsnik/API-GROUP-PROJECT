@@ -249,7 +249,8 @@ margin-top:40px;
 #footer_top{
 	background-color: rgba(255, 255, 255, 0.1);
 	width: 900px;
-	height: 285px;
+  height: 250px;
+  margin: auto;
 }
 
 #footer_top p{
@@ -260,29 +261,11 @@ margin-top:40px;
 	padding: 40px 50px 30px 60px;
 }
 
-.foot_col1, .foot_col2, .foot_col3,{
+.column{
     float: left ;
-    
     box-sizing: border-box;
-}
-
-
-.foot_col1 h2, .foot_col2 h2, .foot_col3 h2{
-	padding-left: 20px;
-}
-
-
-
-.foot_col2{
- 
-	padding-left: 10px;
-	padding-right: 10px;
-}
-
-
-
-.foot_col3 a{
-	font-weight: normal;
+    width:33.33%;
+    padding-left: 20px;
 }
 
 
@@ -314,12 +297,7 @@ margin-top:40px;
     padding-bottom: 10px;
 }
 
-#footer{
-	text-align: center;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	font-size: 10px;
-}
+
 
 /*calendar*/
 
