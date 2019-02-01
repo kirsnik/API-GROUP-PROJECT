@@ -26,28 +26,7 @@ $("#signup-button").on("click", function () {
   }
   console.log(userInfo);
 
-  var snapshot;
-  var userData = snapshot.val();
-
   // Pushes userInfo to database
-  if (userData !== userInfo.username) {
     database.ref().push(userInfo)
-  }
-  else {
-    console.log("User exists!");
-  }
-  
 });
 
-database.ref().on("child_added", userExist,
-
-  function (errorObject) {
-    console.log("child:", userDataDB)
-    console.log("The read failed: " + errorObject.code);
-  });
-
-function userExist(snapshot) {
-  var userDataDB = snapshot.val();
-  console.log(userDataDB.username);
-  console.log(userDataDB.email);
-};

@@ -1,0 +1,31 @@
+<html>
+
+<head>
+    <style type="text/css">
+        .tile {
+            display: inline-block;
+            border: 1px solid grey;
+            background: silver;
+            padding: 4px;
+            text-align: center;
+            font-size: 15px;
+            width: 250px;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+</head>
+
+<body>
+    <form>
+        <input type="text" id="zipInput" required="required" pattern="[A-Za-z0-9]{1,20}" placeholder="Search"
+            aria-label="Search" data-zip="zipCodeNumber">
+        <button id="addZip" type="submit">Enter Zip Code</button>
+    </form>
+    <div id="displayMovie"></div>
+</body>
+
+<script type="text/javascript" src="javascript/app.js"></script>
+
+</html>

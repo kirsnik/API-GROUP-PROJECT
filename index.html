@@ -13,6 +13,10 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/reset.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://wikiki.github.io/css/documentation.css?v=201901011101">
+    <link rel="canonical" href="https://wikiki.github.io/components/carousel/">
+    <link rel="alternate" type="application/rss+xml" title="Bulma-Extensions" href="https://wikiki.github.io/feed.xml">
     <!-- Including the Lobster font from Google's Font Directory -->
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lobster" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -41,7 +45,7 @@
                     <img class="logo" src="/Users/Tr-Nguyen/Desktop/API-GROUP-PROJECT/css/Images/Small MovieMoxie.png">
             <!-->
                 <li><a href="index.html">Home</a></li>
-                <li><a href="#">Coming Soon</a></li>
+                <li><a href="playingNow.html">Now Playing</a></li>
                 <li><a href="signin.html">Sign In</a></li>
                 <li><a href="aboutus.html">About Us</a></li>
                 <li style="float:right; margin: 5px" type="text">
@@ -211,6 +215,32 @@
     </footer>
 
     <script src="javascript/apis.js" async defer></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bulma-carousel@3.0.0/dist/js/bulma-carousel.min.js"></script>
+
+
+
+
+    <script type="text/javascript" src="https://wikiki.github.io/node_modules/bulma-extensions/bulma-carousel/dist/js/bulma-carousel.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var carousels = bulmaCarousel.attach();
+        }, false);
+    </script>
+
+
+    <script src="https://wikiki.github.io/vendor/clipboard-1.7.1.min.js"></script>
+    <script src="https://wikiki.github.io/js/main.js?v=201901011101"></script>
+
+    <script async defer type="text/javascript">
+        (function () {
+            window.fnames = new Array();
+            window.ftypes = new Array();
+            fnames[0] = 'EMAIL';
+            ftypes[0] = 'email';
+        }());
+       // var $mcj = window.jQuery.noConflict(true);
+    </script
 </body>
 
 </html>
